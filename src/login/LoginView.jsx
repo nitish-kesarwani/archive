@@ -1,10 +1,21 @@
 import * as Styled from "./LoginView.styles";
 import mediaValetLogo from "../assets/images/mvlogo.png";
+import { isLoggedIn } from "../utilities/auth-service.util";
+import { useNavigate } from "react-router-dom";
+import { RouteConstant } from "../constants";
+import { useEffect } from "react";
 
 export const LoginView = () => {
+  const navigate = useNavigate();
   const handleLogin = () => {
     window.open("https://mv-visualsearchapi.azurewebsites.net/signin-oidc");
   };
+
+  useEffect(() => {
+    if (isLoggedIn()) {
+      navigate(RouteConstant.home);
+    }
+  }, [navigate]);
 
   return (
     <Styled.Container>

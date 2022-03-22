@@ -8,8 +8,9 @@ const AuthRoute = () => {
   return (
     <Routes>
       <Route path={RouteConstant.login} element={<LoginView />} />
-      <Route exact path="/" element={<PrivateRoute />}>
-        <Route exact path={RouteConstant.home} element={<HomeView />} />
+      <Route path="/" element={<PrivateRoute />}>
+        <Route path={RouteConstant.home} element={<HomeView />} />
+        <Route path={"/"} element={<HomeView />} />
       </Route>
     </Routes>
   );
