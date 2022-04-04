@@ -1,4 +1,4 @@
 export const RouteConstant = {
-  login: "/login",
+  login: "/signin-oidc",
   home: "/home",
 };

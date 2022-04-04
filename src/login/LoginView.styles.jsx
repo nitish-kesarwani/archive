@@ -35,10 +35,29 @@ export const SignInButton = styled.button`
   border: none;
   color: white;
   text-decoration: none;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > span {
+    margin-left: 10px;
+  }
   &:hover {
     background-color: #005d9e;
     border-color: #2483c5;
     cursor: pointer;
+  }
+  @keyframes loader {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    & > svg {
+      animation: loader infinite 1s linear;
+    }
   }
 `;

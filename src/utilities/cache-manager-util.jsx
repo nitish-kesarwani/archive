@@ -1,7 +1,7 @@
 ﻿const keyPrefix = process.env.REACT_APP_LOCAL_STORAGE_ENCRYPTION_KEY;
 
 const CacheManager = {
-  isStringyfied: txt => {
+  isStringyfied: (txt) => {
     try {
       JSON.parse(txt);
       return true;
@@ -27,13 +27,13 @@ const CacheManager = {
 
     window.localStorage.setItem(key, value);
   },
-  removeItem: key => {
+  removeItem: (key) => {
     key = `${keyPrefix}${key}`;
     window.localStorage.removeItem(key);
   },
   clear: () => {
     window.localStorage.clear();
-  }
+  },
 };
 
 export default CacheManager;

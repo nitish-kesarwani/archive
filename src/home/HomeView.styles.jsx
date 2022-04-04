@@ -10,3 +10,12 @@ export const WrapperLeftPanel = styled.div`
   padding: 10px;
 `;
 export const WrapperRightPanel = styled.div``;
+export const TopBar = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: end;
+  & > svg {
+    cursor: pointer;
+  }
+`;
